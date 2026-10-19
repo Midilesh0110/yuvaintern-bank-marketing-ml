@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this project, cite the UCI Bank Marketing dataset and this project."
+title: "Bank Marketing Subscription Prediction"
+authors:
+  - name: "Manus AI"
+year: 2026
+references:
+  - type: dataset
+    authors:
+      - family-names: "Moro"
+        given-names: "Sérgio"
+      - family-names: "Rita"
+        given-names: "Paulo"
+      - family-names: "Cortez"
+        given-names: "Paulo"
+    title: "Bank Marketing"
+    year: 2014
+    doi: "10.24432/C5K306"
+    url: "https://archive.ics.uci.edu/dataset/222/bank+marketing"

@@ -1,0 +1,79 @@
+{
+  "dataset": "UCI Bank Marketing, bank-additional-full.csv",
+  "dataset_url": "https://archive.ics.uci.edu/dataset/222/bank+marketing",
+  "rows": 41188,
+  "features_in_raw_file": 21,
+  "positive_rate_all": 0.11265417111780131,
+  "missing_cells_raw": 0,
+  "train_rows": 32950,
+  "test_rows": 8238,
+  "test_positive_rate": 0.3083272638990046,
+  "feature_count_model": 18,
+  "excluded_for_pre_call_leakage": [
+    "duration",
+    "campaign"
+  ],
+  "split": "chronological ordered 80/20 holdout; first 80% training; last 20% final test",
+  "cv": "4-fold expanding-window TimeSeriesSplit on training period",
+  "threshold": 0.5,
+  "cv_training": {
+    "logistic_regression": {
+      "ap": {
+        "mean": 0.07488732023401141,
+        "std": 0.03625721025766112
+      },
+      "roc_auc": {
+        "mean": 0.5146600895998291,
+        "std": 0.048557603852391294
+      },
+      "f1": {
+        "mean": 0.07595926951410961,
+        "std": 0.044022630918149674
+      }
+    },
+    "random_forest": {
+      "ap": {
+        "mean": 0.08084243605044852,
+        "std": 0.0483317043094011
+      },
+      "roc_auc": {
+        "mean": 0.5111122120496612,
+        "std": 0.048156102225321594
+      },
+      "f1": {
+        "mean": 0.00810500401977076,
+        "std": 0.005222617470713489
+      }
+    }
+  },
+  "holdout_test": [
+    {
+      "model": "majority_baseline",
+      "average_precision": 0.3083272638990046,
+      "roc_auc": null,
+      "precision_at_0_5": 0.0,
+      "recall_at_0_5": 0.0,
+      "f1_at_0_5": 0.0,
+      "balanced_accuracy_at_0_5": 0.5
+    },
+    {
+      "model": "logistic_regression",
+      "average_precision": 0.5027003655758286,
+      "roc_auc": 0.6996884871884872,
+      "precision_at_0_5": 0.3566284779050736,
+      "recall_at_0_5": 0.8578740157480315,
+      "f1_at_0_5": 0.5038150289017341,
+      "balanced_accuracy_at_0_5": 0.5839914129284207
+    },
+    {
+      "model": "random_forest",
+      "average_precision": 0.5042608914319143,
+      "roc_auc": 0.7173493669556662,
+      "precision_at_0_5": 0.5835095137420718,
+      "recall_at_0_5": 0.32598425196850395,
+      "f1_at_0_5": 0.4182874463248295,
+      "balanced_accuracy_at_0_5": 0.6111318241239501
+    }
+  ],
+  "interpretation": "Holdout scores estimate retrospective performance on this historical benchmark, not expected performance on a current bank campaign. No deployment or causal uplift claim is supported."
+}
